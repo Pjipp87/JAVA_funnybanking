@@ -30,11 +30,9 @@ public class StartupWindowController implements Initializable {
     private ImageView logo;
 
     @FXML
-    private Pane bankName;
+    private ImageView bankName;
 
-    @FXML
-    private Text bla;
-
+ 
 
     
     @Override
@@ -46,7 +44,7 @@ public class StartupWindowController implements Initializable {
 
     private void StartupAnimation(){
         //wait(5);
-        FadeTransition visibilityFade = new FadeTransition(Duration.seconds(2), logo);
+        FadeTransition visibilityFade = new FadeTransition(Duration.seconds(1), logo);
         TranslateTransition positonFade = new TranslateTransition(Duration.seconds(1),logo);
 
 
@@ -54,12 +52,22 @@ public class StartupWindowController implements Initializable {
         visibilityFade.setToValue(1.0);
         visibilityFade.play();
         
+        
 
         positonFade.setFromX(496);
         positonFade.setToX(0);
         positonFade.play();
+        positonFade.setOnFinished(event -> showBankName());
 
 
+    }
+
+
+    private void showBankName(){
+        FadeTransition ft = new FadeTransition(Duration.seconds(1), bankName);
+        ft.setFromValue(0);
+        ft.setToValue(1.0);
+        ft.play();
     }
 
 

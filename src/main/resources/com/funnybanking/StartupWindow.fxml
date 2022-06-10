@@ -32,20 +32,23 @@
   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 -->
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.funnybanking.StartupWindowController">
+<VBox prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.funnybanking.StartupWindowController">
   <children>
     <MenuBar VBox.vgrow="NEVER">
       <menus>
@@ -63,7 +66,6 @@
     </MenuBar>
     <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" style="-fx-background-color: #8db5f7;" VBox.vgrow="ALWAYS">
       <children>
-            <Button layoutX="294.0" layoutY="316.0" mnemonicParsing="false" text="Button" />
             <ImageView fx:id="logo" fitHeight="150.0" fitWidth="200.0" layoutX="36.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/logo.png" />
@@ -72,20 +74,26 @@
                   <DropShadow />
                </effect>
             </ImageView>
-            <Pane fx:id="bankName" layoutX="205.0" layoutY="13.0" prefHeight="200.0" prefWidth="421.0" visible="false">
-               <children>
-                  <Text fx:id="bla" fill="#fffb00" layoutX="14.0" layoutY="66.0" stroke="#ffbb00" strokeType="OUTSIDE" text="Lions" underline="true">
-                     <font>
-                        <Font name="System Bold Italic" size="48.0" />
-                     </font>
-                  </Text>
-                  <Text fill="#f80000" layoutX="14.0" layoutY="117.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.1" text="International Bank">
-                     <font>
-                        <Font name="System Bold Italic" size="42.0" />
-                     </font>
-                  </Text>
-               </children>
-            </Pane>
+            <TextField layoutX="342.0" layoutY="288.0" />
+            <PasswordField layoutX="342.0" layoutY="334.0" />
+            <Button layoutX="422.0" layoutY="383.0" mnemonicParsing="false" text="Einloggen" />
+            <Button layoutX="36.0" layoutY="370.0" mnemonicParsing="false" style="-fx-background-color: pink; -fx-border-color: red;" text="Konto eröffnen" underline="true">
+               <padding>
+                  <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Text layoutX="253.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benutzername" />
+            <Text layoutX="280.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+            <ImageView fx:id="bankName" fitHeight="150.0" fitWidth="405.0" layoutX="220.0" layoutY="38.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/BankName.png" />
+               </image>
+            </ImageView>
       </children>
          <effect>
             <DropShadow />
