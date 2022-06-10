@@ -1,4 +1,9 @@
 package com.funnybanking;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -14,6 +19,8 @@ import javafx.util.Duration;
 
 
 public class StartupWindowController implements Initializable {
+
+    
 
     @FXML
     private Label label;
@@ -32,7 +39,8 @@ public class StartupWindowController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {        
-        StartupAnimation();       
+        StartupAnimation();    
+           
     }
 
 
@@ -58,7 +66,7 @@ public class StartupWindowController implements Initializable {
 
 
   
-
+    
 
 
 
