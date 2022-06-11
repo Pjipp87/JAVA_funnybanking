@@ -11,7 +11,9 @@ import javafx.animation.FadeTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
@@ -32,6 +34,20 @@ public class StartupWindowController implements Initializable {
     @FXML
     private ImageView bankName;
 
+    @FXML
+    private Text PasswordForgottenButton;
+
+    @FXML
+    private Button openAccountButton;
+
+    @FXML
+    private Pane helperWindow;
+
+    @FXML
+    private MenuItem openHelperWindow;
+
+    @FXML
+    private Button closeHelperWindow;
  
 
     
@@ -70,8 +86,38 @@ public class StartupWindowController implements Initializable {
         ft.play();
     }
 
+    @FXML
+    private void hoverOpenAccoutButton(){
+        if (openAccountButton.isHover()){
+           openAccountButton.setStyle("-fx-background-color: #43AD02");
+           openAccountButton.setUnderline(true); 
+        }else if(!openAccountButton.isHover()){
+            openAccountButton.setStyle("-fx-background-color: #5EEC06; -fx-border-color: red; -fx-border-radius: 5");
+            openAccountButton.setUnderline(false);
+        }               
+        
+    } 
 
 
+    @FXML
+    private void hoverPasswordForgottenButton(){
+        if(!PasswordForgottenButton.isUnderline())        
+        PasswordForgottenButton.setUnderline(true);
+        else{
+            PasswordForgottenButton.setUnderline(false);
+        }
+    }
+
+
+    @FXML
+    private void toggleHelp(){
+        if(!helperWindow.isVisible()){
+            helperWindow.setVisible(true);
+        } else{
+            helperWindow.setVisible(false);
+        }
+
+    }
 
   
     

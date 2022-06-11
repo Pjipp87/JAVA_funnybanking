@@ -44,6 +44,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -59,7 +60,7 @@
         </Menu>
         <Menu mnemonicParsing="false" text="Hilfe">
           <items>
-            <MenuItem mnemonicParsing="false" text="Hilfe beim Einloggen" />
+            <MenuItem fx:id="openHelperWindow" mnemonicParsing="false" onAction="#toggleHelp" text="Hilfe beim Einloggen" />
           </items>
         </Menu>
       </menus>
@@ -74,26 +75,88 @@
                   <DropShadow />
                </effect>
             </ImageView>
-            <TextField layoutX="342.0" layoutY="288.0" />
-            <PasswordField layoutX="342.0" layoutY="334.0" />
-            <Button layoutX="422.0" layoutY="383.0" mnemonicParsing="false" text="Einloggen" />
-            <Button layoutX="36.0" layoutY="370.0" mnemonicParsing="false" style="-fx-background-color: pink; -fx-border-color: red;" text="Konto eröffnen" underline="true">
+            <TextField layoutX="342.0" layoutY="267.0">
+               <font>
+                  <Font size="14.0" />
+               </font></TextField>
+            <PasswordField layoutX="342.0" layoutY="313.0">
+               <font>
+                  <Font size="14.0" />
+               </font></PasswordField>
+            <Button layoutX="439.0" layoutY="391.0" mnemonicParsing="false" text="Einloggen">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Button fx:id="openAccountButton" layoutX="36.0" layoutY="370.0" mnemonicParsing="false" onMouseEntered="#hoverOpenAccoutButton" onMouseExited="#hoverOpenAccoutButton" style="-fx-background-color: #5EEC06; -fx-border-color: red; -fx-border-radius: 5;" text="Konto eröffnen">
                <padding>
                   <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
                </padding>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Text layoutX="248.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benutzername">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <Text layoutX="278.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <ImageView fx:id="bankName" fitHeight="150.0" fitWidth="405.0" layoutX="220.0" layoutY="38.0" onMousePressed="#hoverOpenAccoutButton" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/BankName.png" />
+               </image>
+            </ImageView>
+            <Text fx:id="PasswordForgottenButton" fill="#0c00f2" layoutX="406.0" layoutY="366.0" onMouseEntered="#hoverPasswordForgottenButton" onMouseExited="#hoverPasswordForgottenButton" strokeType="OUTSIDE" strokeWidth="0.0" text="Password vergessen">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
-            <Text layoutX="253.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benutzername" />
-            <Text layoutX="280.0" layoutY="351.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
-            <ImageView fx:id="bankName" fitHeight="150.0" fitWidth="405.0" layoutX="220.0" layoutY="38.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/BankName.png" />
-               </image>
-            </ImageView>
+               </cursor>
+            </Text>
+            <Pane fx:id="helperWindow" layoutX="131.0" layoutY="88.0" prefHeight="248.0" prefWidth="377.0" style="-fx-background-color: #8db5f7; -fx-border-color: black; -fx-border-width: 2;" visible="false">
+               <children>
+                  <Button fx:id="closeHelperWindow" layoutX="260.0" layoutY="186.0" mnemonicParsing="false" onAction="#toggleHelp" text="Schließen">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="14.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Geben sie in den Feldern">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="147.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hinweis">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="14.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Benutzernamen">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="12.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="die Daten ein, die Sie bei der Registrierung gewählt haben">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="14.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="und ">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Text layoutX="12.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password">
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
       </children>
          <effect>
             <DropShadow />
