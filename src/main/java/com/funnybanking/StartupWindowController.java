@@ -119,8 +119,16 @@ public class StartupWindowController implements Initializable {
 
     }
 
-  
+    @FXML
+    private void switchToRegistrationWindow() throws IOException {
+        App.setRoot("RegistrationWindow");
+    }
+
     
+    @FXML
+    private void switchToAccountOverviewWindow() throws IOException {
+        App.setRoot("AccountOverviewWindow");
+    }
 
 
 
