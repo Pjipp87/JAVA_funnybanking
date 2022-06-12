@@ -12,6 +12,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.Pane;
 
+import static com.funnybanking.NewUser.createUser;
+
 /**
  * RegistrationWindowController
  */
@@ -49,7 +51,13 @@ public class RegistrationWindowOneController {
 
     @FXML
     private void goForward() throws IOException{
+        // (anrede,firstname, lastname,  email, dateOfBirth,  street, streetnumber,zipcode, city)
         if(checkForCompletion()){
+            if(radioMale.isSelected()){
+                createUser("Frau", firstname.getText().toString(), lastname.getText().toString(), email.getText().toString(), dateOfBirth.getValue().toString(), street.getText().toString(), Integer.parseInt(streetnumber.getText().toString()), zipcode.getText().toString(), city.getText().toString() );
+            }else{
+                createUser("Herr", firstname.getText().toString(), lastname.getText().toString(), email.getText().toString(), dateOfBirth.getValue().toString(), street.getText().toString(), Integer.parseInt(streetnumber.getText().toString()), zipcode.getText().toString(), city.getText().toString() );
+            }       
             App.setRoot("RegistrationWindowTwo");
         } else{
             System.out.println(dateOfBirth.getValue());
