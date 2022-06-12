@@ -4,6 +4,8 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -42,8 +44,8 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <DatePicker layoutX="139.0" layoutY="207.0" />
-      <Text layoutX="19.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Straße ">
+      <DatePicker fx:id="dateOfBirth" layoutX="139.0" layoutY="207.0" />
+      <Text layoutX="17.0" layoutY="258.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Straße ">
          <font>
             <Font size="18.0" />
          </font>
@@ -63,28 +65,31 @@
             <Font size="18.0" />
          </font>
       </Text>
-      <RadioButton layoutX="139.0" layoutY="71.0" mnemonicParsing="false" text="Herr">
+      <RadioButton fx:id="radioMale" layoutX="139.0" layoutY="71.0" mnemonicParsing="false" text="Herr">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="title" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="radioFemale" layoutX="226.0" layoutY="71.0" mnemonicParsing="false" text="Frau" toggleGroup="$title">
          <font>
             <Font size="14.0" />
          </font>
       </RadioButton>
-      <RadioButton layoutX="226.0" layoutY="71.0" mnemonicParsing="false" text="Frau">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </RadioButton>
-      <TextField layoutX="139.0" layoutY="100.0" />
-      <TextField layoutX="139.0" layoutY="137.0" />
-      <TextField layoutX="139.0" layoutY="170.0" />
-      <TextField layoutX="139.0" layoutY="239.0" />
-      <TextField layoutX="139.0" layoutY="275.0" />
-      <TextField layoutX="139.0" layoutY="311.0" />
+      <TextField fx:id="firstname" layoutX="139.0" layoutY="100.0" />
+      <TextField fx:id="lastname" layoutX="139.0" layoutY="137.0" />
+      <TextField fx:id="email" layoutX="139.0" layoutY="170.0" />
+      <TextField fx:id="street" layoutX="139.0" layoutY="239.0" />
+      <TextField fx:id="streetnumber" layoutX="139.0" layoutY="275.0" />
+      <TextField fx:id="zipcode" layoutX="139.0" layoutY="311.0" />
       <Text layoutX="19.0" layoutY="366.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ort">
          <font>
             <Font size="18.0" />
          </font>
       </Text>
-      <TextField layoutX="139.0" layoutY="347.0" />
+      <TextField fx:id="city" layoutX="139.0" layoutY="347.0" />
       <Button fx:id="forward" layoutX="442.0" layoutY="411.0" mnemonicParsing="false" onAction="#goForward" text="Weiter">
          <font>
             <Font size="18.0" />
@@ -95,5 +100,27 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <AnchorPane fx:id="hinweis" layoutX="95.0" layoutY="118.0" prefHeight="244.0" prefWidth="386.0" style="-fx-background-color: #8db5f7; -fx-border-color: black; -fx-border-width: 2;" visible="false">
+         <effect>
+            <DropShadow />
+         </effect>
+         <children>
+            <Text layoutX="14.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Für eine Registrierung müssen ">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text layoutX="14.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="alle Felder korrekt ausgefüllt werden!">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="okay" layoutX="153.0" layoutY="148.0" mnemonicParsing="false" onAction="#closeHinweis" text="Okay">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
