@@ -53,7 +53,7 @@ public class RegistrationWindowOneController {
     private void goForward() throws IOException{
         // (anrede,firstname, lastname,  email, dateOfBirth,  street, streetnumber,zipcode, city)
         if(checkForCompletion()){
-            if(radioMale.isSelected()){
+            if(radioFemale.isSelected()){
                 createUser("Frau", firstname.getText().toString(), lastname.getText().toString(), email.getText().toString(), dateOfBirth.getValue().toString(), street.getText().toString(), Integer.parseInt(streetnumber.getText().toString()), zipcode.getText().toString(), city.getText().toString() );
             }else{
                 createUser("Herr", firstname.getText().toString(), lastname.getText().toString(), email.getText().toString(), dateOfBirth.getValue().toString(), street.getText().toString(), Integer.parseInt(streetnumber.getText().toString()), zipcode.getText().toString(), city.getText().toString() );
