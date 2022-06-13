@@ -12,7 +12,7 @@ public class UserDBController {
 
     public static void connectToDB(){
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con=DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/lionsbank","root","");
             stm = con.createStatement();
             String sql_create = "CREATE TABLE IF NOT EXISTS Benutzerdatenbank(personalnummer INTEGER, anrede VARCHAR(50), firstname VARCHAR(50), lastname VARCHAR(50), password VARCHAR(50), loggedIn BOOLEAN);";
