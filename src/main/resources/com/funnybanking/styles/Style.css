@@ -2,7 +2,7 @@
   -fx-background-color: #8db5f7;
 }
 
-.button {
+logoutButton {
   -fx-background-radius: 10;
   -fx-background-color: #ff0000;
   -fx-border-color: black;
