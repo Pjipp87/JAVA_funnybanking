@@ -16,6 +16,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 
 import static com.funnybanking.NewUser.getUser;
+import static com.funnybanking.UserDBController.addUser;
 
 public class RegistrationWindowTwoController implements Initializable {
     
@@ -86,7 +87,7 @@ public class RegistrationWindowTwoController implements Initializable {
                        DB Verbidnung
                        Password Warunungen
                        */ 
-
+                        addUser(getUser().getAnrede(), getUser().getFirstname(), getUser().getLastname(),getUser().getDateOfBirth(), 0, "none", getUser().getStreet(), getUser().getStreetNumber(), getUser().getZipCode(), getUser().getCity(), getUser().getEmail(), username.getText().toString(), hashtext, "none", 0, "none", "none", "none");
                         completionPopUp.setVisible(true);
                         
                 } else{
